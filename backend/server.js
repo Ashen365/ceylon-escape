@@ -12,10 +12,12 @@ const endpointSecret = process.env.STRIPE_WEBHOOK_SECRET;
 const setupSwagger = require('./swagger');
 
 // Sentry initialization (must be first)
-Sentry.init({ dsn: process.env.SENTRY_DSN });
+Sentry.init({ dsn: process.env.SENTRY_DSN || "" }); // Use "" fallback if DSN is not set
 
 // The request handler must be the first middleware on the app
-app.use(Sentry.Handlers.requestHandler());
+if (Sentry.Handlers && typeof Sentry.Handlers.requestHandler === "function") {
+  app.use(Sentry.Handlers.requestHandler());
+}
 
 // Logging middleware
 app.use(morgan('dev'));
@@ -132,7 +134,9 @@ app.post(
 );
 
 // Sentry error handler (must be before any other error handlers)
-app.use(Sentry.Handlers.errorHandler());
+if (Sentry.Handlers && typeof Sentry.Handlers.errorHandler === "function") {
+  app.use(Sentry.Handlers.errorHandler());
+}
 
 // Centralized error handler middleware
 app.use((err, req, res, next) => {
