@@ -254,20 +254,6 @@ export default function Home() {
         ref={heroRef}
         className="relative h-[85vh] overflow-hidden flex items-center justify-center text-white"
       >
-        {/* Background image with parallax effect */}
-        <div 
-          className="hero-bg absolute inset-0 z-0 bg-cover bg-center"
-          style={{ 
-            backgroundImage: "url('https://images.unsplash.com/photo-1540202404-a2f29016b523?auto=format&fit=crop&w=1920&q=80')",
-            transform: "translateY(0)",
-            height: "120%",
-            top: "-10%"
-          }}
-        ></div>
-        
-        {/* Light darkening overlay - reduced opacity for glassmorphism effect */}
-        <div className="absolute inset-0 bg-black opacity-40 z-10"></div>
-        
         {/* Hero content with glassmorphism effect */}
         <div 
           className="hero-content relative z-20 max-w-4xl mx-auto text-center px-10 py-14 rounded-xl border border-white/20"
@@ -315,6 +301,22 @@ export default function Home() {
           </motion.div>
         </div>
         
+        {/* Background image with parallax effect */}
+        <div 
+          className="hero-bg absolute inset-0 z-0 bg-cover bg-center"
+          style={{ 
+            backgroundImage: "url('https://images.unsplash.com/photo-1540202404-a2f29016b523?auto=format&fit=crop&w=1920&q=80')",
+            transform: "translateY(0)",
+            height: "100%",
+            top: "-10%"
+          }}
+        >
+
+        {/* Light darkening overlay - reduced opacity for glassmorphism effect */}
+        <div className="absolute inset-0 bg-black opacity-40 z-10"></div>
+        
+
+      </div>
         {/* Scroll indicator */}
         <motion.div 
           className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-30"
