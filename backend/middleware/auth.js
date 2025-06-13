@@ -1,3 +1,4 @@
+//C:\Users\USER\ceylon-escape\backend\middleware\auth.js
 const jwt = require('jsonwebtoken');
 
 // Middleware to protect routes

@@ -1,3 +1,4 @@
+//C:\Users\USER\ceylon-escape\backend\models\Booking.js
 const mongoose = require('mongoose');
 
 const bookingSchema = new mongoose.Schema({

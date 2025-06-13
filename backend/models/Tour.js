@@ -1,3 +1,4 @@
+//C:\Users\USER\ceylon-escape\backend\models\Tour.js
 const mongoose = require('mongoose');
 
 const tourSchema = new mongoose.Schema({
