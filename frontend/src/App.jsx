@@ -4,12 +4,16 @@ import { AuthProvider } from "./contexts/AuthContext"; // Add this import
 import { Toaster } from "react-hot-toast"; // Add this import (you'll need react-hot-toast installed)
 import Loader from "./components/ui/Loader";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Destinations from "./pages/Destinations";
 import Contact from "./pages/Contact";
 import DestinationDetail from "./pages/DestinationDetail";
 import './index.css'
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+
 export default function App() {
   const [loading, setLoading] = useState(true);
 
@@ -31,7 +35,10 @@ export default function App() {
           <Route path="/destinations" element={<Destinations />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/destinations/:slug" element={<DestinationDetail />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
         </Routes>
+        <Footer/>
       </Router>
     </AuthProvider>
   );
