@@ -1,116 +1,70 @@
-# Ceylon Escape - Backend
+# Getting Started with Create React App
 
-This is the backend for **Ceylon Escape**, a tour booking and payment platform built with Node.js, Express, and MongoDB. It supports booking management, reviews, user authentication, Stripe payments, and email notifications.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
----
+## Available Scripts
 
-## Features
+In the project directory, you can run:
 
-- **User Authentication**: Register & login with JWT-based authentication.
-- **Tour Management**: CRUD operations for tours.
-- **Booking System**: Book tours and manage bookings.
-- **Payment Integration**: Secure payments using Stripe.
-- **Reviews**: Leave and manage reviews for tours.
-- **Email Notifications**: Sends confirmation and update emails (Ethereal for development).
-- **API Documentation**: Interactive Swagger UI.
-- **Error Handling & Logging**: Robust error handling and request logging.
+### `npm start`
 
----
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-## Getting Started
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-### 1. Clone the Repository
+### `npm test`
 
-```bash
-git clone https://github.com/Ashen365/ceylon-escape.git
-cd ceylon-escape/backend
-```
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### 2. Install Dependencies
+### `npm run build`
 
-```bash
-npm install
-```
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-### 3. Configure Environment Variables
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-- Copy `.env.example` to `.env` and fill in your secrets:
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-```bash
-cp .env.example .env
-```
+### `npm run eject`
 
-- Set the required environment variables in `.env`:
-  - `PORT`
-  - `MONGODB_URI`
-  - `JWT_SECRET`
-  - `STRIPE_SECRET_KEY`
-  - `STRIPE_WEBHOOK_SECRET`
-  - `EMAIL_*` (see `.env.example`)
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-> **Never commit your real `.env` file! It is already gitignored.**
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-### 4. Run the Server
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-```bash
-npm start
-```
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-- The server should start on your specified `PORT` (default is 5000).
+## Learn More
 
----
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-## API Documentation
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-- Visit [http://localhost:5000/api-docs](http://localhost:5000/api-docs) for interactive Swagger UI once the server is running.
+### Code Splitting
 
----
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-## Project Structure
+### Analyzing the Bundle Size
 
-```
-backend/
-  ├── models/         # Mongoose models (User, Tour, Booking, Review)
-  ├── routes/         # Express route handlers
-  ├── controllers/    # Business logic (optional, if separated)
-  ├── mailer.js       # Email sending logic
-  ├── server.js       # Entry point
-  ├── swagger.js      # Swagger setup
-  ├── .env.example    # Example environment variables
-  ├── .gitignore
-  └── package.json
-frontend/
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-```
+### Making a Progressive Web App
 
----
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-## Development Notes
+### Advanced Configuration
 
-- **Ethereal Email** is used for local testing of emails. Change to a real SMTP provider for production.
-- **Stripe** is used for handling payments. Use test keys in development.
-- **MongoDB Atlas** or local MongoDB for database.
-- Detailed logging via [Morgan](https://www.npmjs.com/package/morgan).
-- Error handling middleware included.
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
----
+### Deployment
 
-## Deployment
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-- Use environment variables for all secrets in production.
-- Set up a production-ready database and email provider.
-- Make sure to configure Stripe with live keys for real payments.
+### `npm run build` fails to minify
 
----
-
-## Contributing
-
-Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
-
----
-
-## Contact
-
-For any questions, contact [Ashen365](https://github.com/Ashen365).
-# ceylon-escape
-Ceylon Escape is a travel platform for couples to explore Sri Lanka’s beauty with ease. It offers tour packages, activity bookings, guide management, and itinerary planning—all in one place—making romantic getaways simple, personalized, and unforgettable.
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
