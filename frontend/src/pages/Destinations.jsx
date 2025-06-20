@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import { motion, useScroll, useTransform, useSpring, AnimatePresence } from "framer-motion";
+import { motion, useScroll, useSpring, AnimatePresence } from "framer-motion";
 import { 
   MapPin, 
   Calendar, 
@@ -60,32 +60,7 @@ const ParallaxBackground = () => {
   );
 };
 
-// Featured Destination Photos
-const featuredPhotos = [
-  "https://images.unsplash.com/photo-1590789251993-b0f9cf91cffa?auto=format&fit=crop&w=600&q=80",
-  "https://images.unsplash.com/photo-1602904867537-7db9adecd89c?auto=format&fit=crop&w=600&q=80",
-  "https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=600&q=80",
-  "https://images.unsplash.com/photo-1599326291105-89e3cd99fbce?auto=format&fit=crop&w=600&q=80",
-];
-
 // Animation variants
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.12, delayChildren: 0.3 }
-  }
-};
-
-const itemVariants = {
-  hidden: { y: 50, opacity: 0 },
-  visible: {
-    y: 0,
-    opacity: 1,
-    transition: { type: "spring", stiffness: 80, damping: 15 }
-  }
-};
-
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
   visible: { 
@@ -333,7 +308,7 @@ export default function Destinations() {
         </div>
       </section>
 
-      {/* Category Filter - Added margin to create more space */}
+      {/* Category Filter */}
       <motion.section 
         className="relative bg-white pt-10 pb-8"
         variants={fadeInUp}
@@ -369,7 +344,7 @@ export default function Destinations() {
         </div>
       </motion.section>
 
-      {/* Destinations Grid - Adjusted padding and added margin-top */}
+      {/* Destinations Grid */}
       <section className="relative max-w-7xl mx-auto px-6 py-8 mt-8">
         <motion.h2
           initial={{ opacity: 0, y: -20 }}
@@ -432,7 +407,8 @@ export default function Destinations() {
                         alt={dest.name}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                       />
-                      <div className={`absolute inset-0 bg-gradient-to-t ${dest.color} opacity-70`}></div>
+                      {/* FIXED: Lowered overlay opacity for clearer images */}
+                      <div className={`absolute inset-0 bg-gradient-to-t ${dest.color} opacity-30`}></div>
                       <div className="absolute top-4 left-4 flex items-center gap-2 bg-white/80 rounded-full px-3 py-1 backdrop-blur-sm shadow">
                         <Globe className="w-4 h-4 text-blue-600" />
                         <span className="font-semibold text-sm text-blue-700">{dest.name}</span>
@@ -488,9 +464,6 @@ export default function Destinations() {
 
       {/* Enhanced spacing after destinations grid for better visual flow */}
       <div className="h-12"></div>
-
-      {/* Featured Photos section would go here */}
-      {/* Newsletter & CTA section would go here */}
     </div>
   );
 }

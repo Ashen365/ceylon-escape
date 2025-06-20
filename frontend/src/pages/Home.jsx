@@ -95,37 +95,37 @@ const features = [
 const destinations = [
   {
     name: "Ella",
-    image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80",
+    image: "https://images.squarespace-cdn.com/content/v1/5a3bb03b4c326d76de73ddaa/9732566d-6b33-4a1a-ba0c-1b73ed8848a4/The+Common+Wanderer-9888.jpg?format=2500w",
     desc: "Lush green hills, cool weather, and scenic train rides.",
-    color: "from-green-400 to-emerald-500"
+    color: "from-green-100 to-emerald-100"
   },
   {
     name: "Galle Fort",
-    image: "https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80",
+    image: "https://do6raq9h04ex.cloudfront.net/sites/8/2021/07/galle-fort-1050x700-1.jpg",
     desc: "Historic fort, charming streets, and ocean views.",
     color: "from-yellow-400 to-orange-500"
   },
   {
     name: "Sigiriya",
-    image: "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=600&q=80",
+    image: "https://www.lovidhu.com/uploads/posts/2021/03//sigiria-sri-lanka-945x630.jpg",
     desc: "Ancient rock fortress with panoramic vistas.",
     color: "from-blue-400 to-cyan-500"
   },
   {
     name: "Mirissa",
-    image: "https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&w=600&q=80",
+    image: "https://cdn.shortpixel.ai/spai/w_1157+q_+ret_img+to_webp/https://www.theglobetrottergp.com/wp-content/uploads/2019/05/oDZ1LpuSxCdJQd5UhbjSA_thumb_60bb.jpg",
     desc: "Golden beach, whale watching, and sunsets.",
     color: "from-teal-400 to-blue-500"
   },
   {
     name: "Kandy",
-    image: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=600&q=80",
+    image: "https://imagedelivery.net/W3Iz4WACAy2J0qT0cCT3xA/didi/articles/pg7gd1tdoiapvfw3zwk01dbc/public",
     desc: "Cultural city and the sacred Temple of the Tooth.",
     color: "from-purple-400 to-indigo-500"
   },
   {
     name: "Yala National Park",
-    image: "https://images.unsplash.com/photo-1454023492550-5696f8ff10e1?auto=format&fit=crop&w=600&q=80",
+    image: "https://www.eatsandretreats.com/travel/wp-content/uploads/2018/10/shutterstock_589428650-1.jpg",
     desc: "Wildlife safaris and beautiful landscapes.",
     color: "from-orange-400 to-red-500"
   },
@@ -161,12 +161,18 @@ const testimonials = [
 
 // Gallery Images
 const gallery = [
-  "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80",
-  "https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=800&q=80",
-  "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=800&q=80",
-  "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=800&q=80",
-  "https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&w=800&q=80",
-  "https://images.unsplash.com/photo-1454023492550-5696f8ff10e1?auto=format&fit=crop&w=800&q=80",
+  "https://travelrebels.com/wp-content/uploads/2024/04/anuradhapura-tempels-533x800-1.jpg",
+  "https://us.lakpura.com/cdn/shop/files/LKI9500075-01-E_b9676f68-bb02-4827-ad28-9de134e5b198.jpg?v=1653459755&width=500",
+  "https://www.backpackerbanter.com/blog/wp-content/uploads/2018/11/best-places-to-visit-in-sri-lanka-backpacker-travel-sigiriya-kandy-dambulla-elephants.jpg",
+  "https://i0.wp.com/srilankatravelandtourism.com/wp-content/uploads/2024/05/Sri-lanka-two-week-itinerary.jpeg?resize=525%2C525&ssl=1",
+  "https://bmkltsly13vb.compat.objectstorage.ap-mumbai-1.oraclecloud.com/cdn.ft.lk/assets/uploads/image_3a41e31adb.jpg",
+  "https://www.yogawinetravel.com/wp-content/uploads/2020/03/Lagoon-boat-tour-in-Bentota-Sri-Lanka-750x503.jpg",
+  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTO5IzWjhBZ4Sny-LkShtaLS_3Z_YQjCtC4iQ&s",
+  "https://luxuryholidaysasia.com/wp-content/uploads/2024/12/Best-Places-to-Visit-in-Sri-Lanka-2024-Featured-Image.jpg.webp",
+  "https://www.planetware.com/wpimages/2023/03/sri-lanka-best-places-to-visit-intro-paragraph-elephants.jpg",
+  "https://deih43ym53wif.cloudfront.net/dambulla-sri-lanka-shutterstock_584002507_f8f9739162.jpeg",
+  "https://www.localhi.com/wp-content/uploads/2025/02/Meemure-Village.jpg",
+  "https://www.planetware.com/wpimages/2020/01/sri-lanka-best-places-to-visit-colombo.jpg",
 ];
 
 // Animation variants
@@ -417,7 +423,8 @@ export default function Home() {
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                     loading="lazy"
                   />
-                  <div className={`absolute inset-0 bg-gradient-to-t ${dest.color} opacity-70`}></div>
+                  {/* FIX: Reduced overlay opacity for clearer photo */}
+                  <div className={`absolute inset-0 bg-gradient-to-t ${dest.color} opacity-30`}></div>
                   <div className="absolute top-4 left-4 flex items-center gap-2 bg-white/80 rounded-full px-3 py-1 backdrop-blur-sm shadow">
                     <Globe className="w-4 h-4 text-blue-600" />
                     <span className="font-semibold text-sm text-blue-700">{dest.name}</span>
@@ -574,7 +581,7 @@ export default function Home() {
         {/* Background image with overlay */}
         <div className="absolute inset-0">
           <img 
-            src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=1600&q=80" 
+            src="https://th.bing.com/th/id/OIP.S0_0j-ZLkj2a2ywyebOZDwHaE8?rs=1&pid=ImgDetMain&cb=idpwebp2&o=7&rm=3" 
             alt="Sri Lanka Beach" 
             className="w-full h-full object-cover" 
           />

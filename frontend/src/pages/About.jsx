@@ -421,7 +421,7 @@ export default function About() {
             </div>
             <div className="flex justify-center items-center">
               <img
-                src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80"
+                src="https://i.ytimg.com/vi/o-rK8VCfqbI/maxresdefault.jpg"
                 alt="Sri Lanka landscape"
                 className="rounded-3xl shadow-2xl w-full max-w-md object-cover"
               />
